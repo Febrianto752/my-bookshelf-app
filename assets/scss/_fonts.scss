@@ -1,0 +1,42 @@
+$font-weights: (
+  "extra-light": 300,
+  "light": 400,
+  "regular": 500,
+  "medium": 600,
+  "semi-bold": 700,
+  "bold": 800,
+);
+
+@font-face {
+  font-family: "Poppins-ex";
+  src: url("../fonts/Poppins/Poppins-ExtraLight.ttf");
+  font-weight: map-get($map: $font-weights, $key: "extra-light");
+}
+
+@font-face {
+  font-family: "Poppins-ex";
+  src: url("../fonts/Poppins/Poppins-Light.ttf");
+  font-weight: map-get($map: $font-weights, $key: "light");
+}
+
+@font-face {
+  font-family: "Poppins-ex";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf");
+  font-weight: map-get($map: $font-weights, $key: "regular");
+}
+
+@font-face {
+  font-family: "Poppins-ex";
+  src: url("../fonts/Poppins/Poppins-Medium.ttf");
+  font-weight: map-get($map: $font-weights, $key: "medium");
+}
+@font-face {
+  font-family: "Poppins-ex";
+  src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
+  font-weight: map-get($map: $font-weights, $key: "semi-bold");
+}
+@font-face {
+  font-family: "Poppins-ex";
+  src: url("../fonts/Poppins/Poppins-Bold.ttf");
+  font-weight: map-get($map: $font-weights, $key: "bold");
+}
