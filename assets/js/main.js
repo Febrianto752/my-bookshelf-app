@@ -63,6 +63,7 @@ const renderPage = ({
   setTabActive(tabActive);
   tabActiveElem.classList.add("active");
   anotherTabElem.classList.remove("active");
+  BookList.setType(tabActive);
 
   if (tabActive === "done") {
     modifyTitlePage("Daftar Buku Yang Sudah Selesai Dibaca", "text-secondary");

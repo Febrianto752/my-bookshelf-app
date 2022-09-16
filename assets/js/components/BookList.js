@@ -30,19 +30,15 @@ const BookList = {
     this.books = this.books.filter((book) => book.id !== id);
   },
   setType(type = "") {
-    this.type = type;
-    this.render(books.filter((book) => book.isComplete === this.type));
+    this.type = type === "not-yet" ? false : true;
+    this.render(this.books.filter((book) => book.isComplete === this.type));
   },
 
   render(booksByType = []) {
+    this.container.innerHTML = "";
+    // console.log(booksByType);
     booksByType.forEach((book) => {
       this.container.appendChild(BookItem.init({ book: book }));
     });
   },
 };
-
-// BookList.init({
-//   books: data,
-//   type: "not-yet",
-//   container: document.querySelector(".book-list"),
-// });
