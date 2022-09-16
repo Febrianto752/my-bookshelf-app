@@ -9,10 +9,12 @@ const BookList = {
   add(book) {
     this.books.unshift(book);
     localStorage.setItem(KEY_NAME, JSON.stringify(this.books));
+    this.render(this.books.filter((book) => book.isComplete === this.type));
   },
   deleteBookById(id) {
     this.books = this.books.filter((book) => book.id !== id);
     localStorage.setItem(KEY_NAME, JSON.stringify(this.books));
+    this.render(this.books.filter((book) => book.isComplete === this.type));
   },
   updateIsCompleteBookById(id) {
     this.books = this.books.map((book) => {

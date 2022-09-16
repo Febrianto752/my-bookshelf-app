@@ -2,7 +2,6 @@ const showAlertAskForDelete = ({
   messageSuccessDelete = "",
   bookTitle = "",
   bookId = 0,
-  elementToBeDeleted,
 }) => {
   const alertAskElem = document.createElement("div");
   const wrapperOverlayTransparent = document.createElement("div");
@@ -34,7 +33,6 @@ const showAlertAskForDelete = ({
     showAlertSuccess(messageSuccessDelete);
     alertAskElem.classList.remove("show-alert-ask");
     wrapperOverlayTransparent.classList.remove("show-modal");
-    elementToBeDeleted.remove();
   });
 
   wrapperOverlayTransparent.appendChild(alertAskElem);

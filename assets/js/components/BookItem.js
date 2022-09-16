@@ -45,7 +45,6 @@ const BookItem = {
           messageSuccessDelete: `Buku berjudul "${bookTitle}" berhasil dihapus!!`,
           bookTitle,
           bookId,
-          elementToBeDeleted: bookItemElem,
         });
       });
 

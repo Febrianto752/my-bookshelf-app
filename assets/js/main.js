@@ -121,8 +121,4 @@ formAddBookElem.addEventListener("submit", function (event) {
   authorElem.value = "";
   yearElem.value = 2016;
   isComplete.checked = false;
-
-  if ((tabActive === "not-yet" ? false : true) === isComplete) {
-    bookListElem.prepend(BookItem.init({ book: newBook }));
-  }
 });
