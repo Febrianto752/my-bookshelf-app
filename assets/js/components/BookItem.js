@@ -9,7 +9,9 @@ const BookItem = {
 
     bookItemElem.setAttribute(
       "class",
-      "book-item column-12 column-lg-3 column-md-4 column-sm-6"
+      `book-item column-12 column-lg-3 column-md-4 column-sm-6 ${
+        this.book.isComplete === false ? "shadow-primary" : "shadow-secondary"
+      }`
     );
 
     bookItemElem.innerHTML = `<h2 class="line-clamp ${
@@ -35,11 +37,12 @@ const BookItem = {
       class="icon"
     />
   </div>`;
-
+    const tmp = this.book.title;
     bookItemElem
       .querySelector("img:last-child")
-      .addEventListener("click", function () {
+      .addEventListener("click", () => {
         bookItemElem.remove();
+        showAlertSuccess(`Buku berjudul "${tmp}" berhasil dihapus!!`);
       });
 
     return bookItemElem;

@@ -15,6 +15,7 @@ const bookListElem = document.querySelector(".book-list");
 if (typeof Storage !== undefined) {
   if (!localStorage.getItem(KEY_NAME)) {
     localStorage.setItem(KEY_NAME, JSON.stringify([]));
+    bookListElem.innerText = "Tidak ada daftar buku yang ingin di baca!";
   } else {
     const books = JSON.parse(localStorage.getItem(KEY_NAME));
     BookList.init({
