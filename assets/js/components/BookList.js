@@ -29,6 +29,7 @@ const BookList = {
   },
   deleteBookById(id) {
     this.books = this.books.filter((book) => book.id !== id);
+    localStorage.setItem(KEY_NAME, JSON.stringify(this.books));
   },
   setType(type = "") {
     this.type = type === "not-yet" ? false : true;
@@ -37,7 +38,7 @@ const BookList = {
 
   render(booksByType = []) {
     this.container.innerHTML = "";
-    // console.log(booksByType);
+    console.log(booksByType);
     booksByType.forEach((book) => {
       this.container.appendChild(BookItem.init({ book: book }));
     });

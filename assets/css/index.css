@@ -112,7 +112,7 @@
   background-color: #35877a;
 }
 
-.btn-reset {
+.btn-danger {
   padding: 10px 24px;
   border: 0;
   border-radius: 4px;
@@ -169,6 +169,47 @@ div.show-alert-success {
   background-color: #2e39e7;
 }
 
+.bg-transparent {
+  background: transparent !important;
+}
+
+.alert-ask {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: white;
+  width: 90%;
+  padding: 26px;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  font-size: 1.4em;
+  text-align: center;
+  opacity: 0;
+  z-index: -99;
+  transition: 0.4s;
+}
+.alert-ask img {
+  animation: updown 1s infinite alternate;
+}
+
+div.show-alert-ask {
+  opacity: 1;
+  z-index: 100;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 @font-face {
   font-family: "Poppins-ex";
   src: url("../fonts/Poppins/Poppins-ExtraLight.ttf");
@@ -304,6 +345,12 @@ div.show-alert-success {
   }
   .grid-container .row-sm-3 {
     grid-row-end: span 3;
+  }
+  nav.brand {
+    font-size: 24px;
+  }
+  div.alert-ask {
+    width: 400px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -515,7 +562,7 @@ nav {
 }
 nav .brand {
   color: black;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
 nav .brand:hover {

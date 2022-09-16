@@ -25,6 +25,14 @@
       }
     }
   }
+
+  nav.brand {
+    font-size: 24px;
+  }
+
+  div.alert-ask {
+    width: 400px;
+  }
 }
 
 // medium
@@ -32,6 +40,7 @@
   div.modal {
     width: 660px;
   }
+
   .grid-container {
     @for $i from 1 to 12 {
       .column-md-#{$i} {
