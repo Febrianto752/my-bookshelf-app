@@ -11,6 +11,7 @@ const titlePageElem = document.querySelector(".title-page");
 let tabActive = "not-yet";
 const KEY_NAME = "bookList";
 const bookListElem = document.querySelector(".book-list");
+// const inputSearchElem = document.
 
 if (typeof Storage !== undefined) {
   if (!localStorage.getItem(KEY_NAME)) {

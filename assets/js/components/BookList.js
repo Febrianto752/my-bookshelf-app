@@ -31,9 +31,26 @@ const BookList = {
     this.books = this.books.filter((book) => book.id !== id);
     localStorage.setItem(KEY_NAME, JSON.stringify(this.books));
   },
+  updateIsCompleteBookById(id) {
+    this.books = this.books.map((book) => {
+      if (book.id === id) book.isComplete = !book.isComplete;
+      return book;
+    });
+    localStorage.setItem(KEY_NAME, JSON.stringify(this.books));
+  },
   setType(type = "") {
     this.type = type === "not-yet" ? false : true;
     this.render(this.books.filter((book) => book.isComplete === this.type));
+  },
+
+  search(keyword = "") {
+    this.render(
+      this.books.filter((book) => {
+        return book.title.includes(keyword) && book.isComplete === this.type
+          ? book
+          : false;
+      })
+    );
   },
 
   render(booksByType = []) {

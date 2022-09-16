@@ -23,12 +23,12 @@ const BookItem = {
   <div class="year fw-4">${this.book.year}</div>
 
   <div class="action">
-    <img
-      src="./assets/images/icons/checked.png"
-      alt="checked icon"
-      width="30"
-      class="icon"
-    />
+  ${
+    this.book.isComplete === false
+      ? '<img src="./assets/images/icons/checked.png" alt="checked icon" width="30" class="icon" />'
+      : '<img src="./assets/images/icons/undo.png" alt="undo icon" width="30" class="icon" />'
+  }
+    
     <img
       src="./assets/images/icons/trash.png"
       alt="trash"
@@ -47,6 +47,13 @@ const BookItem = {
           bookId,
           elementToBeDeleted: bookItemElem,
         });
+      });
+
+    bookItemElem
+      .querySelector("img:first-child")
+      .addEventListener("click", () => {
+        BookList.updateIsCompleteBookById(bookId);
+        bookItemElem.remove();
       });
 
     return bookItemElem;
