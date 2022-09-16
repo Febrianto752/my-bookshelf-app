@@ -23,20 +23,30 @@ btnCloseElem.addEventListener("click", () => {
 });
 
 linkTabNotYetElem.addEventListener("click", function () {
-  setTabActive("not-yet");
-  tabNotYetElem.classList.add("active");
-  tabDoneElem.classList.remove("active");
-  renderPage({ tabActive: "not-yet" });
+  renderPage({
+    tabActive: "not-yet",
+    tabActiveElem: tabNotYetElem,
+    anotherTabElem: tabDoneElem,
+  });
 });
 
 linkTabDoneElem.addEventListener("click", function () {
-  setTabActive("done");
-  tabDoneElem.classList.add("active");
-  tabNotYetElem.classList.remove("active");
-  renderPage({ tabActive: "done" });
+  renderPage({
+    tabActive: "done",
+    tabActiveElem: tabDoneElem,
+    anotherTabElem: tabNotYetElem,
+  });
 });
 
-const renderPage = ({ tabActive = null }) => {
+const renderPage = ({
+  tabActive = "not-yet",
+  tabActiveElem,
+  anotherTabElem,
+}) => {
+  setTabActive(tabActive);
+  tabActiveElem.classList.add("active");
+  anotherTabElem.classList.remove("active");
+
   if (tabActive === "done") {
     modifyTitlePage("Daftar Buku Yang Sudah Selesai Dibaca", "text-secondary");
   } else if (tabActive === "not-yet") {

@@ -1,4 +1,8 @@
 class BookList {
-  init({ books = [], type = "" }) {}
+  constructor({ books = [], type = "" }) {
+    this.books = books;
+    this.type = type;
+  }
+
   render() {}
 }
