@@ -98,7 +98,7 @@
         <h1 class="text-center">Tambah Buku Baru</h1>
         <button class="close">X</button>
 
-        <form>
+        <form id="form-add-book">
           <div class="mb-1">
             <label for="judul" class="form-label">Judul</label>
             <input
@@ -106,6 +106,7 @@
               id="judul"
               class="form-control"
               placeholder="Masukan judul buku..."
+              required
             />
           </div>
           <div class="mb-1">
@@ -115,6 +116,7 @@
               id="penulis"
               class="form-control"
               placeholder="Masukan nama penulis..."
+              required
             />
           </div>
           <div class="mb-1">
@@ -128,12 +130,13 @@
               id="tahun"
               class="form-control"
               placeholder="Masukan tahun terbit buku..."
+              required
             />
           </div>
 
           <div class="mb-3">
-            <input type="checkbox" id="completed" />
-            <label for="completed">Sudah selesai dibaca</label>
+            <input type="checkbox" id="isComplete" />
+            <label for="isComplete">Sudah selesai dibaca</label>
           </div>
 
           <button class="btn-submit" type="submit">Submit</button>
@@ -141,7 +144,8 @@
         </form>
       </div>
     </div>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <script src="./assets/js/components/BookItem.js"></script>
+    <script src="./assets/js/components/BookList.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

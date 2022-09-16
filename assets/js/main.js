@@ -9,6 +9,23 @@ const wrapperOverlayElem = document.querySelector(".wrapper-overlay");
 
 const titlePageElem = document.querySelector(".title-page");
 let tabActive = "not-yet";
+const KEY_NAME = "bookList";
+const bookListElem = document.querySelector(".book-list");
+
+if (typeof Storage !== undefined) {
+  if (!localStorage.getItem(KEY_NAME)) {
+    localStorage.setItem(KEY_NAME, JSON.stringify([]));
+  } else {
+    const books = JSON.parse(localStorage.getItem(KEY_NAME));
+    BookList.init({
+      books: books,
+      type: "not-yet",
+      container: bookListElem,
+    });
+  }
+} else {
+  alert("your browser is not support web storage, this app will not run!!");
+}
 
 const setTabActive = (value) => {
   tabActive = value;
@@ -58,3 +75,43 @@ const modifyTitlePage = (text, colorClass) => {
   titlePageElem.innerText = text;
   titlePageElem.setAttribute("class", `title-page ${colorClass}`);
 };
+
+btnAddElem.addEventListener("click", () => {
+  wrapperOverlayElem.classList.add("show-modal");
+});
+
+const titleElem = document.getElementById("judul");
+const authorElem = document.getElementById("penulis");
+const yearElem = document.getElementById("tahun");
+const isCompleteElem = document.getElementById("isComplete");
+const formAddBookElem = document.getElementById("form-add-book");
+formAddBookElem.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const title = titleElem.value;
+  const author = authorElem.value;
+  const year = yearElem.value;
+  const isComplete = isCompleteElem.checked;
+  console.log(typeof isComplete);
+
+  const newBook = {
+    id: +new Date(),
+    title,
+    author,
+    year,
+    isComplete,
+  };
+
+  const books = JSON.parse(localStorage.getItem(KEY_NAME));
+  books.unshift(newBook);
+  localStorage.setItem(KEY_NAME, JSON.stringify(books));
+  alert("Buku baru berhasil di tambahkan");
+
+  titleElem.value = "";
+  authorElem.value = "";
+  yearElem.value = 2016;
+  isComplete.checked = false;
+
+  if ((tabActive === "not-yet" ? false : true) === isComplete) {
+    bookListElem.prepend(BookItem.init(newBook));
+  }
+});
