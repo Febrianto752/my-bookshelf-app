@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
   <body>
+    <div class="btn-add icon">
+      <img src="./assets/images/icons/plus.png" alt="create icon" width="40" />
+    </div>
     <header class="container">
       <nav>
-        <div class="brand">My Bookshelf</div>
+        <a href="/" class="brand">My Bookshelf</a>
         <ul>
-          <li><a href="#">Not Yet</a></li>
-          <li><a href="#">Done</a></li>
+          <li class="active" id="not-yet"><a href="#">Not Yet</a></li>
+          <li id="done"><a href="#">Done</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <h1 class="title-page">Daftar Buku Yang Belum Selesai Dibaca</h1>
+      <h1 class="title-page text-primary">
+        Daftar Buku Yang Belum Selesai Dibaca
+      </h1>
 
       <div class="search-bar">
         <img
@@ -33,7 +38,110 @@
           placeholder="Cari judul buku..."
         />
       </div>
+
+      <div class="book-list container grid-container">
+        <div class="book-item column-12 column-lg-3 column-md-4 column-sm-6">
+          <h2 class="line-clamp text-primary title">
+            Harry Potter and the Philosopher\'s Stone asdasdasdasdsa
+          </h2>
+
+          <div class="author line-clamp fw-5">J.K Rowling</div>
+          <div class="year fw-4">1997</div>
+
+          <div class="action">
+            <img
+              src="./assets/images/icons/checked.png"
+              alt="checked icon"
+              width="30"
+              class="icon"
+            />
+            <img
+              src="./assets/images/icons/trash.png"
+              alt="trash"
+              width="30"
+              class="icon"
+            />
+          </div>
+        </div>
+        <div class="book-item column-12 column-lg-3 column-md-4 column-sm-6">
+          <h2 class="line-clamp text-primary title">
+            Harry Potter and the Philosopher\'s Stone asdasdasdasdsa
+          </h2>
+
+          <div class="author line-clamp fw-5">J.K Rowling</div>
+          <div class="year fw-4">1997</div>
+
+          <div class="action">
+            <img
+              src="./assets/images/icons/checked.png"
+              alt="checked icon"
+              width="30"
+              class="icon"
+            />
+            <img
+              src="./assets/images/icons/trash.png"
+              alt="trash"
+              width="30"
+              class="icon"
+            />
+          </div>
+        </div>
+      </div>
     </main>
+
+    <footer>
+      <p>&copy; Copyright 2022, All Right Reserved.</p>
+    </footer>
+
+    <div class="wrapper-overlay">
+      <div class="modal">
+        <h1 class="text-center">Tambah Buku Baru</h1>
+        <button class="close">X</button>
+
+        <form>
+          <div class="mb-1">
+            <label for="judul" class="form-label">Judul</label>
+            <input
+              type="text"
+              id="judul"
+              class="form-control"
+              placeholder="Masukan judul buku..."
+            />
+          </div>
+          <div class="mb-1">
+            <label for="penulis" class="form-label">Penulis</label>
+            <input
+              type="text"
+              id="penulis"
+              class="form-control"
+              placeholder="Masukan nama penulis..."
+            />
+          </div>
+          <div class="mb-1">
+            <label for="tahun" class="form-label">Tahun Terbit</label>
+            <input
+              type="number"
+              min="2000"
+              max="2022"
+              step="1"
+              value="2016"
+              id="tahun"
+              class="form-control"
+              placeholder="Masukan tahun terbit buku..."
+            />
+          </div>
+
+          <div class="mb-3">
+            <input type="checkbox" id="completed" />
+            <label for="completed">Sudah selesai dibaca</label>
+          </div>
+
+          <button class="btn-submit" type="submit">Submit</button>
+          <button class="btn-reset" type="reset">Reset</button>
+        </form>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

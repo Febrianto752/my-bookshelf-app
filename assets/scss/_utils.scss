@@ -1,3 +1,5 @@
+@import "./colors";
+@import "./fonts";
 .container {
   padding-left: 6%;
   padding-right: 6%;
@@ -5,4 +7,92 @@
 
 .text-center {
   text-align: center;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+.fw-1 {
+  font-weight: map-get($map: $font-weights, $key: "extra-light");
+}
+.fw-2 {
+  font-weight: map-get($map: $font-weights, $key: "light");
+}
+.fw-3 {
+  font-weight: map-get($map: $font-weights, $key: "regular");
+}
+.fw-4 {
+  font-weight: map-get($map: $font-weights, $key: "medium");
+}
+.fw-5 {
+  font-weight: map-get($map: $font-weights, $key: "semi-bold");
+}
+.fw-6 {
+  font-weight: map-get($map: $font-weights, $key: "bold");
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mb-3 {
+  margin-bottom: 3em;
+}
+
+.close {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.4em;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.btn-submit {
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  background-color: $primary-color;
+  font-weight: map-get($map: $font-weights, $key: "medium");
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #40a193;
+}
+
+.btn-submit:active {
+  background-color: #35877a;
+}
+
+.btn-reset {
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  background-color: #b6322a;
+  font-weight: map-get($map: $font-weights, $key: "medium");
+  cursor: pointer;
+}
+
+.btn-reset:hover {
+  background-color: #a52c26;
+}
+
+.btn-reset:active {
+  background-color: #882520;
 }
