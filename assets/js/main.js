@@ -102,9 +102,8 @@ formAddBookElem.addEventListener("submit", function (event) {
     isComplete,
   };
 
-  const books = JSON.parse(localStorage.getItem(KEY_NAME));
-  books.unshift(newBook);
-  localStorage.setItem(KEY_NAME, JSON.stringify(books));
+  BookList.add(newBook);
+
   alert("Buku baru berhasil di tambahkan");
 
   titleElem.value = "";
@@ -113,6 +112,6 @@ formAddBookElem.addEventListener("submit", function (event) {
   isComplete.checked = false;
 
   if ((tabActive === "not-yet" ? false : true) === isComplete) {
-    bookListElem.prepend(BookItem.init(newBook));
+    bookListElem.prepend(BookItem.init({ book: newBook }));
   }
 });

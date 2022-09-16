@@ -25,6 +25,7 @@ const BookList = {
   },
   add(book) {
     this.books.unshift(book);
+    localStorage.setItem(KEY_NAME, JSON.stringify(this.books));
   },
   deleteBookById(id) {
     this.books = this.books.filter((book) => book.id !== id);

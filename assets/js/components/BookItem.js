@@ -1,7 +1,7 @@
 const BookItem = {
-  init({ book = [] }) {
+  init({ book = {} }) {
     this.book = book;
-
+    console.log(this.book);
     return this.render();
   },
   render() {
