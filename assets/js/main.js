@@ -7,11 +7,11 @@ const btnAddElem = document.querySelector(".btn-add");
 const btnCloseElem = document.querySelector(".close");
 const wrapperOverlayElem = document.querySelector(".wrapper-overlay");
 
+const bookListElem = document.querySelector(".book-list");
+const inputSearchElem = document.querySelector(".input-search");
 const titlePageElem = document.querySelector(".title-page");
 let tabActive = "not-yet";
 const KEY_NAME = "bookList";
-const bookListElem = document.querySelector(".book-list");
-const inputSearchElem = document.querySelector(".input-search");
 
 if (typeof Storage !== undefined) {
   if (!localStorage.getItem(KEY_NAME)) {
@@ -96,6 +96,7 @@ const authorElem = document.getElementById("penulis");
 const yearElem = document.getElementById("tahun");
 const isCompleteElem = document.getElementById("isComplete");
 const formAddBookElem = document.getElementById("form-add-book");
+
 formAddBookElem.addEventListener("submit", function (event) {
   event.preventDefault();
   const title = titleElem.value;
