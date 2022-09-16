@@ -1,5 +1,8 @@
 const tabNotYetElem = document.getElementById("not-yet");
 const tabDoneElem = document.getElementById("done");
+const linkTabNotYetElem = document.querySelector("#not-yet a");
+const linkTabDoneElem = document.querySelector("#done a");
+
 const btnAddElem = document.querySelector(".btn-add");
 const btnCloseElem = document.querySelector(".close");
 const wrapperOverlayElem = document.querySelector(".wrapper-overlay");
@@ -19,16 +22,16 @@ btnCloseElem.addEventListener("click", () => {
   wrapperOverlayElem.classList.remove("show-modal");
 });
 
-tabNotYetElem.addEventListener("click", function () {
+linkTabNotYetElem.addEventListener("click", function () {
   setTabActive("not-yet");
-  this.classList.add("active");
+  tabNotYetElem.classList.add("active");
   tabDoneElem.classList.remove("active");
   renderPage({ tabActive: "not-yet" });
 });
 
-tabDoneElem.addEventListener("click", function () {
+linkTabDoneElem.addEventListener("click", function () {
   setTabActive("done");
-  this.classList.add("active");
+  tabDoneElem.classList.add("active");
   tabNotYetElem.classList.remove("active");
   renderPage({ tabActive: "done" });
 });
