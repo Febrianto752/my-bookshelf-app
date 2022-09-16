@@ -29,6 +29,9 @@
 
 // medium
 @media screen and (min-width: 768px) {
+  div.modal {
+    width: 660px;
+  }
   .grid-container {
     @for $i from 1 to 12 {
       .column-md-#{$i} {

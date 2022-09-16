@@ -268,6 +268,9 @@
   }
 }
 @media screen and (min-width: 768px) {
+  div.modal {
+    width: 660px;
+  }
   .grid-container .column-md-1 {
     grid-column-end: span 1;
   }
@@ -611,7 +614,7 @@ footer {
 }
 
 .modal {
-  width: 660px;
+  width: 90%;
   margin: auto;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
   padding: 44px 34px 60px;
