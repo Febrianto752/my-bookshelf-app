@@ -1,20 +1,3 @@
-const data = [
-  {
-    id: 3657848524,
-    title: "Harry Potter and the Philosopher's Stone",
-    author: "J.K Rowling",
-    year: 1997,
-    isComplete: false,
-  },
-  {
-    id: 3657848525,
-    title: "Harry Potter and the Philosopher's Stone",
-    author: "J.K Rowling",
-    year: 2097,
-    isComplete: false,
-  },
-];
-
 const BookList = {
   init({ books = [], type = "not-yet", container }) {
     this.books = books;
@@ -56,8 +39,12 @@ const BookList = {
   render(booksByType = []) {
     this.container.innerHTML = "";
     console.log(booksByType);
-    booksByType.forEach((book) => {
-      this.container.appendChild(BookItem.init({ book: book }));
-    });
+    if (booksByType.length !== 0 && booksByType) {
+      booksByType.forEach((book) => {
+        this.container.appendChild(BookItem.init({ book: book }));
+      });
+    } else {
+      this.container.innerHTML = `<div class="column-12 text-center">Data Buku Tidak Ditemukan</div>`;
+    }
   },
 };
