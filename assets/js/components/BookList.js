@@ -32,7 +32,8 @@ const BookList = {
   search(keyword = "") {
     this.render(
       this.books.filter((book) => {
-        return book.title.includes(keyword) && book.isComplete === this.type
+        return book.title.toLowerCase().includes(keyword.toLowerCase()) &&
+          book.isComplete === this.type
           ? book
           : false;
       })
