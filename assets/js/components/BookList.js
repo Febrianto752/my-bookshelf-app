@@ -9,6 +9,7 @@ const BookList = {
   add(book) {
     this.books.unshift(book);
     localStorage.setItem(KEY_NAME, JSON.stringify(this.books));
+    inputSearchElem.value = "";
     this.render(this.books.filter((book) => book.isComplete === this.type));
   },
   deleteBookById(id) {
@@ -23,7 +24,7 @@ const BookList = {
     });
     localStorage.setItem(KEY_NAME, JSON.stringify(this.books));
   },
-  setType(type = "") {
+  setType(type = "not-yet") {
     this.type = type === "not-yet" ? false : true;
     this.render(this.books.filter((book) => book.isComplete === this.type));
   },
@@ -40,7 +41,7 @@ const BookList = {
 
   render(booksByType = []) {
     this.container.innerHTML = "";
-    console.log(booksByType);
+
     if (booksByType.length !== 0 && booksByType) {
       booksByType.forEach((book) => {
         this.container.appendChild(BookItem.init({ book: book }));

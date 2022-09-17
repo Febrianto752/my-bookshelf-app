@@ -16,7 +16,12 @@ const KEY_NAME = "bookList";
 if (typeof Storage !== undefined) {
   if (!localStorage.getItem(KEY_NAME)) {
     localStorage.setItem(KEY_NAME, JSON.stringify([]));
-    bookListElem.innerText = "Tidak ada daftar buku yang ingin di baca!";
+
+    BookList.init({
+      books: [],
+      type: "not-yet",
+      container: bookListElem,
+    });
   } else {
     const books = JSON.parse(localStorage.getItem(KEY_NAME));
     BookList.init({
@@ -103,7 +108,6 @@ formAddBookElem.addEventListener("submit", function (event) {
   const author = authorElem.value;
   const year = yearElem.value;
   const isComplete = isCompleteElem.checked;
-  console.log(typeof isComplete);
 
   const newBook = {
     id: +new Date(),
