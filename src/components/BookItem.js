@@ -29,12 +29,12 @@ const BookItem = {
   <div class="action">
   ${
     this.book.isComplete === false
-      ? '<img src="./src/images/icons/checked.png" alt="checked icon" width="30" class="icon" />'
-      : '<img src="./src/images/icons/undo.png" alt="undo icon" width="30" class="icon" />'
+      ? '<img src="./images/icons/checked.png" alt="checked icon" width="30" class="icon" />'
+      : '<img src="./images/icons/undo.png" alt="undo icon" width="30" class="icon" />'
   }
     
     <img
-      src="./src/images/icons/trash.png"
+      src="./images/icons/trash.png"
       alt="trash"
       width="30"
       class="icon"
