@@ -1,7 +1,7 @@
-const BookItem = require("./BookItem");
-const { KEY_NAME } = require("../config/storage");
+import BookItem from "./BookItem";
+import { KEY_NAME } from "../config/storage";
 
-const inputSearchElem = require("../config/dom");
+import inputSearchElem from "../config/dom";
 
 const BookList = {
   init({ books = [], type = "not-yet", container }) {
@@ -60,4 +60,4 @@ const BookList = {
   },
 };
 
-module.exports = BookList;
+export default BookList;

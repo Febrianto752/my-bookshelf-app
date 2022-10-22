@@ -1,4 +1,4 @@
-let { tabActive } = require("../config/storage");
+import { tabActive } from "../config/storage";
 
 const showAlertSuccess = (message = "") => {
   const alertSuccessElem = document.createElement("div");
@@ -19,4 +19,4 @@ const showAlertSuccess = (message = "") => {
   }, 2000);
 };
 
-module.exports = showAlertSuccess;
+export default showAlertSuccess;

@@ -1,4 +1,4 @@
-const showAlertSuccess = require("./showAlertSuccess");
+import showAlertSuccess from "./showAlertSuccess";
 // const BookList = require("./BookList");
 
 const showAlertAskForDelete = ({
@@ -49,4 +49,4 @@ const showAlertAskForDelete = ({
   }, 0);
 };
 
-module.exports = showAlertAskForDelete;
+export default showAlertAskForDelete;

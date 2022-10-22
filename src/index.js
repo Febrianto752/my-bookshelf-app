@@ -1,7 +1,7 @@
-const BookList = require("./components/BookList");
-const { KEY_NAME } = require("./config/storage");
-const inputSearchElem = require("./config/dom");
-let { tabActive } = require("./config/storage");
+import BookList from "./components/BookList";
+import { KEY_NAME } from "./config/storage";
+import inputSearchElem from "./config/dom";
+import { tabActive } from "./config/storage";
 
 const tabNotYetElem = document.getElementById("not-yet");
 const tabDoneElem = document.getElementById("done");
@@ -110,6 +110,7 @@ formAddBookElem.addEventListener("submit", function (event) {
   const author = authorElem.value;
   const year = yearElem.value;
   const isComplete = isCompleteElem.checked;
+  console.log(typeof isComplete);
 
   const newBook = {
     id: +new Date(),
@@ -126,5 +127,5 @@ formAddBookElem.addEventListener("submit", function (event) {
   titleElem.value = "";
   authorElem.value = "";
   yearElem.value = 2016;
-  isComplete.checked = false;
+  isCompleteElem.checked = false;
 });

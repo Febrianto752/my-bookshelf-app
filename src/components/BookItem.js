@@ -1,4 +1,4 @@
-const showAlertAskForDelete = require("./showAlertAskForDelete");
+import showAlertAskForDelete from "./showAlertAskForDelete";
 
 const BookItem = {
   init({ book = {}, bookList = {} }) {
@@ -64,4 +64,4 @@ const BookItem = {
   },
 };
 
-module.exports = BookItem;
+export default BookItem;
