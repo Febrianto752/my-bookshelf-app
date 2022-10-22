@@ -1,7 +1,11 @@
+const showAlertSuccess = require("./showAlertSuccess");
+// const BookList = require("./BookList");
+
 const showAlertAskForDelete = ({
   messageSuccessDelete = "",
   bookTitle = "",
   bookId = 0,
+  bookList,
 }) => {
   const alertAskElem = document.createElement("div");
   const wrapperOverlayTransparent = document.createElement("div");
@@ -9,7 +13,7 @@ const showAlertAskForDelete = ({
   alertAskElem.setAttribute("class", "alert-ask");
   alertAskElem.innerHTML = `
   <img
-      src="./assets/images/icons/question.png"
+      src="./src/images/icons/question.png"
       alt="question icon"
       width="30"
       class="mb-1"
@@ -29,7 +33,7 @@ const showAlertAskForDelete = ({
   });
 
   alertAskElem.querySelector(".btn-submit").addEventListener("click", () => {
-    BookList.deleteBookById(bookId);
+    bookList.deleteBookById(bookId);
     showAlertSuccess(messageSuccessDelete);
     alertAskElem.classList.remove("show-alert-ask");
     wrapperOverlayTransparent.classList.remove("show-modal");
@@ -44,3 +48,5 @@ const showAlertAskForDelete = ({
     wrapperOverlayTransparent.classList.add("show-modal");
   }, 0);
 };
+
+module.exports = showAlertAskForDelete;

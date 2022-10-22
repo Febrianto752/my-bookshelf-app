@@ -1,3 +1,8 @@
+const BookList = require("./components/BookList");
+const { KEY_NAME } = require("./config/storage");
+const inputSearchElem = require("./config/dom");
+let { tabActive } = require("./config/storage");
+
 const tabNotYetElem = document.getElementById("not-yet");
 const tabDoneElem = document.getElementById("done");
 const linkTabNotYetElem = document.querySelector("#not-yet a");
@@ -8,10 +13,7 @@ const btnCloseElem = document.querySelector(".close");
 const wrapperOverlayElem = document.querySelector(".wrapper-overlay");
 
 const bookListElem = document.querySelector(".book-list");
-const inputSearchElem = document.querySelector(".input-search");
 const titlePageElem = document.querySelector(".title-page");
-let tabActive = "not-yet";
-const KEY_NAME = "bookList";
 
 if (typeof Storage !== undefined) {
   if (!localStorage.getItem(KEY_NAME)) {

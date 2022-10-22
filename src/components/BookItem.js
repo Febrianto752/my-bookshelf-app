@@ -1,9 +1,13 @@
+const showAlertAskForDelete = require("./showAlertAskForDelete");
+
 const BookItem = {
-  init({ book = {} }) {
+  init({ book = {}, bookList = {} }) {
     this.book = book;
+    this.bookList = bookList;
     return this.render();
   },
   render() {
+    const bookList = this.bookList;
     const bookItemElem = document.createElement("div");
 
     bookItemElem.setAttribute(
@@ -25,12 +29,12 @@ const BookItem = {
   <div class="action">
   ${
     this.book.isComplete === false
-      ? '<img src="./assets/images/icons/checked.png" alt="checked icon" width="30" class="icon" />'
-      : '<img src="./assets/images/icons/undo.png" alt="undo icon" width="30" class="icon" />'
+      ? '<img src="./src/images/icons/checked.png" alt="checked icon" width="30" class="icon" />'
+      : '<img src="./src/images/icons/undo.png" alt="undo icon" width="30" class="icon" />'
   }
     
     <img
-      src="./assets/images/icons/trash.png"
+      src="./src/images/icons/trash.png"
       alt="trash"
       width="30"
       class="icon"
@@ -45,16 +49,19 @@ const BookItem = {
           messageSuccessDelete: `Buku berjudul "${bookTitle}" berhasil dihapus!!`,
           bookTitle,
           bookId,
+          bookList,
         });
       });
 
     bookItemElem
       .querySelector("img:first-child")
       .addEventListener("click", () => {
-        BookList.updateIsCompleteBookById(bookId);
+        bookList.updateIsCompleteBookById(bookId);
         bookItemElem.remove();
       });
 
     return bookItemElem;
   },
 };
+
+module.exports = BookItem;

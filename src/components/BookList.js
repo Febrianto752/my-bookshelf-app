@@ -1,3 +1,8 @@
+const BookItem = require("./BookItem");
+const { KEY_NAME } = require("../config/storage");
+
+const inputSearchElem = require("../config/dom");
+
 const BookList = {
   init({ books = [], type = "not-yet", container }) {
     this.books = books;
@@ -45,10 +50,14 @@ const BookList = {
 
     if (booksByType.length !== 0 && booksByType) {
       booksByType.forEach((book) => {
-        this.container.appendChild(BookItem.init({ book: book }));
+        this.container.appendChild(
+          BookItem.init({ book: book, bookList: this })
+        );
       });
     } else {
       this.container.innerHTML = `<div class="column-12 text-center">Data Buku Tidak Ditemukan</div>`;
     }
   },
 };
+
+module.exports = BookList;

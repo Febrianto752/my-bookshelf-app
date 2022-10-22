@@ -1,3 +1,5 @@
+let { tabActive } = require("../config/storage");
+
 const showAlertSuccess = (message = "") => {
   const alertSuccessElem = document.createElement("div");
   alertSuccessElem.setAttribute(
@@ -16,3 +18,5 @@ const showAlertSuccess = (message = "") => {
     alertSuccessElem.remove();
   }, 2000);
 };
+
+module.exports = showAlertSuccess;

@@ -299,6 +299,7 @@ div.show-alert-ask {
     padding-left: 2%;
     padding-right: 2%;
   }
+
   .search-bar {
     width: 90% !important;
   }
@@ -346,9 +347,11 @@ div.show-alert-ask {
   .grid-container .row-sm-3 {
     grid-row-end: span 3;
   }
+
   nav.brand {
     font-size: 24px;
   }
+
   div.alert-ask {
     width: 400px;
   }
@@ -357,6 +360,7 @@ div.show-alert-ask {
   div.modal {
     width: 660px;
   }
+
   .grid-container .column-md-1 {
     grid-column-end: span 1;
   }
@@ -730,3 +734,5 @@ footer {
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.4);
 }
+
+/*# sourceMappingURL=index.css.map */
