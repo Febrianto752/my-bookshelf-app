@@ -1,16 +1,7 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "production", // choose for production | development
   entry: "./src/index.js",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "main.[contenthash].js",
-    clean: true,
-  },
-  watch: true,
-  devtool: false,
   module: {
     rules: [
       {
