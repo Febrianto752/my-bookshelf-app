@@ -2,6 +2,7 @@ import BookList from "./components/BookList";
 import { KEY_NAME } from "./config/storage";
 import inputSearchElem from "./config/dom";
 import { tabActive } from "./config/storage";
+import "./css/index.css";
 
 const tabNotYetElem = document.getElementById("not-yet");
 const tabDoneElem = document.getElementById("done");
