@@ -4,6 +4,8 @@ import inputSearchElem from "./config/dom";
 import { tabActive } from "./config/storage";
 // import "./css/index.css";
 import "./scss/index.scss";
+import "bootstrap/dist/js/bootstrap.esm";
+import "./index2";
 
 const tabNotYetElem = document.getElementById("not-yet");
 const tabDoneElem = document.getElementById("done");

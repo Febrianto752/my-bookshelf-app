@@ -6,8 +6,8 @@ module.exports = merge(webpackConfigJs, {
   mode: "production", // choose for production | development
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.[contenthash].js",
-    assetModuleFilename: "img/[name]-[hash][ext]",
+    filename: "[name].[contenthash].js",
+    assetModuleFilename: "images/[name]-[hash][ext]",
     clean: true,
   },
   devServer: {

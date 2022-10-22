@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbookshelf_app=self.webpackChunkbookshelf_app||[]).push([[787],{736:(s,e,o)=>{o(138),console.log("index2.js")}},s=>{s(s.s=736)}]);

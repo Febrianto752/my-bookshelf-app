@@ -2,7 +2,24 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  // entry: "./src/index.js",
+  entry: {
+    index: {
+      import: "./src/index.js",
+      dependOn: "shared",
+    },
+    index2: {
+      import: "./src/index2.js",
+      dependOn: "shared",
+    },
+    shared: "bootstrap",
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
+
   module: {
     rules: [
       {
