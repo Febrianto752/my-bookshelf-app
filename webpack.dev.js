@@ -9,6 +9,13 @@ module.exports = merge(webpackConfigJs, {
     filename: "main.[contenthash].js",
     clean: true,
   },
-  watch: true,
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
+    port: 3000,
+    liveReload: true,
+  },
   devtool: false,
 });
